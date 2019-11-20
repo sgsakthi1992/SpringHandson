@@ -1,0 +1,10 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <bean class="com.handson1.service.EmployeeService" name="employeeService"/>
+    <bean class="com.handson1.service.DepartmentService" name="departmentService"/>
+    <bean class="com.handson1.model.Employee" name="employee" scope="prototype"/>
+    <bean class="com.handson1.model.Department" name="department" scope="prototype"/>
+</beans>
