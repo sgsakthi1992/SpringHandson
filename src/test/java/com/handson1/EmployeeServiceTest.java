@@ -11,15 +11,16 @@ import static org.junit.Assert.assertEquals;
 
 public class EmployeeServiceTest {
 
-    ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeans.xml");
-    EmployeeService employeeService = (EmployeeService) context.getBean("employeeService");
+    private ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeans.xml");
+    private EmployeeService employeeService = (EmployeeService) context.getBean("employeeService");
+
     @Test
-    public void getEmployeesListTest(){
-        assertEquals(employeeService.getEmployeeList().size(), 0);
+    public void getEmployeesListTest() {
+        assertEquals(0, employeeService.getEmployeeList().size());
     }
 
     @Test
-    public void createEmployeesTest(){
+    public void createEmployeesTest() {
         Department department = (Department) context.getBean("department");
         department.setDepartmentId(1);
         department.setDepartmentName("IT");
@@ -28,6 +29,6 @@ public class EmployeeServiceTest {
         employee.setEmployeeName("Sakthi");
         employee.setDepartment(department);
         employeeService.createEmployees(employee);
-        assertEquals(employeeService.getEmployeeList().size(), 1);
+        assertEquals(1, employeeService.getEmployeeList().size());
     }
 }

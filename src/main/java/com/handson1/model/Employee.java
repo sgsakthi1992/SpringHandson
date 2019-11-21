@@ -1,12 +1,17 @@
 package com.handson1.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class Employee {
-    int employeeId;
-    String employeeName;
+    private int employeeId;
+    private String employeeName;
     @Autowired
-    Department department;
+    private Department department;
 
     public int getEmployeeId() {
         return employeeId;
